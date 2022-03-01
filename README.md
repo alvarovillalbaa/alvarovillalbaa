@@ -1,7 +1,5 @@
 ### Hi there I am Alvaro!👋
 
-<!--
-
 - 🔭 I’m currently working on Python automatization!
 - 🌱 I’m currently learning Solidity.
 - 👯 I’m looking to collaborate on Blockchain projects like DEXs and DAOs.
@@ -9,4 +7,5 @@
 - 💬 Ask me about anything.
 - 📫 Follow me on [Linkedin](https://www.linkedin.com/in/alvarovillalbaperez/)
 - ⚡ Fun fact: I want to learn about everything hence I never have time...
--->
+
+https://cdn.oldskull.net/wp-content/uploads/2019/08/1-gifs-animados-dvdp-oldskull-.gif
