@@ -14,18 +14,21 @@
 
 
 #### To upload
-Speed Typing Test
-Iris Classifier
-Applied Data Science
-" " in ML
-Screeners
+Speed Typing Test,
+Iris Classifier,
+Applied Data Science,
+" " in ML,
+Screeners,
+niubi frontend elements,
+niubi backend
+
 
 Blockchain???
 
 #### To course
-Blockchain
-Data Science
-Notes
+Blockchain,
+Data Science,
+Notes,
 AI?
 
 JS Projects
