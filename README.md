@@ -20,7 +20,8 @@ Applied Data Science,
 " " in ML,
 Screeners,
 niubi frontend elements,
-niubi backend
+niubi backend,
+any niubi tech developed
 
 
 Blockchain???
