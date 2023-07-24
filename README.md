@@ -1,8 +1,8 @@
 ### Hi there I am Alvaro!👋
 
-- 🔭 I’m currently working on Python automatization!
-- 🌱 I’m currently learning Solidity.
-- 👯 I’m looking to collaborate on Blockchain projects like DEXs and DAOs.
+- 🔭 I’m currently working on Clous!
+- 🌱 I’m currently learning HR Analytics.
+- 👯 I’m looking to collaborate on our organization.
 - 🤔 I’m looking for help with EVERYTHING. Nobody is perfect so I may have something wrong. 
 - 💬 Ask me about anything.
 - 📫 Follow me on [Linkedin](https://www.linkedin.com/in/alvarovillalbaperez/)
