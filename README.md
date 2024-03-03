@@ -1,9 +1,9 @@
 ### Hi there I am Alvaro!👋
 
 - 🔭 I’m currently working on Clous!
-- 🌱 I’m currently learning HR Analytics.
-- 👯 I’m looking to collaborate on our organization.
-- 🤔 I’m looking for help with EVERYTHING. Nobody is perfect so I may have something wrong. 
+- 🌱 And learning about implementing GenAI architectures into software.
+- 👯 I’m looking to collaborate on our open-source repos(still not available)
+- 🤔 I’m looking for help with EVERYTHING. I may have many too many hats to wear. 
 - 💬 Ask me about anything.
 - 📫 Follow me on [Linkedin](https://www.linkedin.com/in/alvarovillalbaperez/)
 - ⚡ Fun fact: I want to learn about everything hence I never have time...
@@ -12,26 +12,4 @@
 
 <img height="180em" src="https://github-readme-stats.vercel.app/api?username=alvarovillalbaa&show_icons=true&hide_border=true&&count_private=true&include_all_commits=true" />
 
-
-#### To upload
-Speed Typing Test,
-Iris Classifier,
-Applied Data Science,
-" " in ML,
-Screeners,
-niubi frontend elements,
-niubi backend,
-any niubi tech developed
-
-
-Blockchain???
-
-#### To course
-Blockchain,
-Data Science,
-Notes,
-AI?
-
-JS Projects
-
-####### Reorganise YT Lists
+### I deleted all my repos because they were not great code, I've been updating it for the past 8 months and will most probably upload them again
