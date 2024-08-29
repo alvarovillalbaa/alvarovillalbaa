@@ -10,6 +10,4 @@
 
 ![profile](https://user-images.githubusercontent.com/87529457/156182981-0a437d86-5c92-4e1d-8335-7a3b8b0162f7.gif)
 
-<img height="180em" src="https://github-readme-stats.vercel.app/api?username=alvarovillalbaa&show_icons=true&hide_border=true&&count_private=true&include_all_commits=true" />
-
-### I deleted all my repos because they were not great code, I've been updating it for the past 8 months and will most probably upload them again
+### I deleted all my repos because they were not great code, I've uploaded some of them as an 'earlycode' repo
