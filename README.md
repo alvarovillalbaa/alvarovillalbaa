@@ -10,4 +10,8 @@
 
 ![profile](https://user-images.githubusercontent.com/87529457/156182981-0a437d86-5c92-4e1d-8335-7a3b8b0162f7.gif)
 
-### I deleted all my repos because they were not great code, I've uploaded some of them as an 'earlycode' repo
+### I deleted all my public repos because they were not great code and mostly with small changes from copied repos from other people, I've uploaded some of them as an 'earlycode' repo in a .zip
+
+In 2019 I 'studied' different programming languages at w3school
+In 2020 I built 4 python games using pygames and some YT tutorials
+In 2024 I took programming seriously and started to develop production-ready code
