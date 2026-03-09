@@ -18,7 +18,15 @@ I work on agent systems, product engineering, and workflow automation across bac
 ## Engineering Metrics
 
 <!--LOC_METRICS_START-->
-Loading metrics...
+### Code Metrics (auto-generated)
+
+| Metric | Value |
+|------|------|
+| Lines Added | 5831476 |
+| Lines Removed | 0 |
+| Net LOC | 5831476 |
+
+Updated: 2026-03-09 13:25 UTC
 <!--LOC_METRICS_END-->
 
 ## Current focus
