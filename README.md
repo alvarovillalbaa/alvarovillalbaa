@@ -15,6 +15,12 @@ I work on agent systems, product engineering, and workflow automation across bac
 - **[code-slides](https://github.com/alvarovillalbaa/code-slides)** - agentic skill for building PPTX-alike presentations with code
 - **[earlycode](https://github.com/alvarovillalbaa/earlycode)** — archive of my early programming projects and experiments
 
+## Engineering Metrics
+
+<!--LOC_METRICS_START-->
+Loading metrics...
+<!--LOC_METRICS_END-->
+
 ## Current focus
 - Multi-agent architectures
 - MCP and tool integrations
