@@ -20,6 +20,8 @@ jobs:
           sudo snap install yq
 
       - name: Run LOC script
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           chmod +x scripts/compute_loc.sh
           ./scripts/compute_loc.sh
