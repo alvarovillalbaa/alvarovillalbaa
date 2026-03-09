@@ -1,0 +1,47 @@
+name: LOC Metrics
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"   # every Monday
+  workflow_dispatch:
+
+jobs:
+  compute:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install deps
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jq
+
+      - name: Run LOC script
+        run: |
+          chmod +x scripts/compute_loc.sh
+          ./scripts/compute_loc.sh
+
+      - name: Inject metrics into README
+        run: |
+          START="<!--LOC_METRICS_START-->"
+          END="<!--LOC_METRICS_END-->"
+          CONTENT=$(cat metrics/loc.md)
+
+          awk -v start="$START" -v end="$END" -v content="$CONTENT" '
+          BEGIN {print_flag=1}
+          $0 ~ start {print; print content; print_flag=0; next}
+          $0 ~ end {print_flag=1}
+          print_flag {print}
+          ' README.md > README.tmp
+
+          mv README.tmp README.md
+
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add README.md metrics/loc.md
+          git commit -m "update LOC metrics" || echo "no changes"
+          git push
