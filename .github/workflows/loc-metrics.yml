@@ -16,7 +16,7 @@ jobs:
       - name: Install deps and tools
         run: |
           sudo apt-get update
-          sudo apt-get install -y jq
+          sudo apt-get install -y jq cloc
           sudo snap install yq
 
       - name: Run LOC script
