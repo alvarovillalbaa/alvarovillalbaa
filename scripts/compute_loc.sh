@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
 TMP=$(mktemp -d)
+trap 'rm -rf "$TMP"' EXIT
+
+: "${GH_TOKEN:?GH_TOKEN is required}"
 
 TOTAL_ADDED=0
 TOTAL_REMOVED=0
@@ -11,162 +14,193 @@ declare -A REPO_REMOVED
 declare -A YEAR_ADDED
 declare -A YEAR_REMOVED
 
-CLOUS_LOC_ADDED=0
-CLOUS_LOC_REMOVED=0
+declare -A PROJECT_REPOS
+declare -A PROJECT_COMMITS
+declare -A PROJECT_LOC_ADDED
+declare -A PROJECT_LOC_REMOVED
 
-fetch_repos () {
-  ORG=$1
-  curl -s "https://api.github.com/users/$ORG/repos?per_page=100" \
-  | jq -r '.[] | select(.fork==false) | .clone_url'
+fetch_user_repos() {
+  local page=1
+  while true; do
+    local response
+    response=$(curl -fsSL \
+      -H "Accept: application/vnd.github+json" \
+      -H "Authorization: Bearer $GH_TOKEN" \
+      "https://api.github.com/user/repos?per_page=100&page=${page}&affiliation=owner")
+
+    local count
+    count=$(echo "$response" | jq 'length')
+    [[ "$count" -eq 0 ]] && break
+
+    echo "$response" | jq -r '.[] | select(.fork == false) | .full_name'
+    page=$((page + 1))
+  done
 }
 
-get_commits_for_org () {
+fetch_org_repos() {
+  local org=$1
+  local page=1
 
-ORG=$1
+  while true; do
+    local response
+    response=$(curl -fsSL \
+      -H "Accept: application/vnd.github+json" \
+      -H "Authorization: Bearer $GH_TOKEN" \
+      "https://api.github.com/orgs/${org}/repos?per_page=100&page=${page}&type=all")
 
-curl -s "https://api.github.com/orgs/$ORG/repos?per_page=100" \
-| jq -r '.[] | select(.fork==false) | .clone_url' \
-| while read repo; do
+    local count
+    count=$(echo "$response" | jq 'length')
+    [[ "$count" -eq 0 ]] && break
 
-git clone --quiet --depth 1 "$repo" "$TMP/tmprepo" 2>/dev/null || continue
-
-git -C "$TMP/tmprepo" rev-list --count HEAD
-
-rm -rf "$TMP/tmprepo"
-
-done | awk '{sum+=$1} END {print sum}'
+    echo "$response" | jq -r '.[] | select(.fork == false) | .full_name'
+    page=$((page + 1))
+  done
 }
 
-clone_and_analyze () {
+clone_and_analyze() {
+  local full_name=$1
+  local owner=${full_name%%/*}
+  local name=${full_name##*/}
+  local repo_dir="$TMP/${owner}__${name}"
 
-URL=$1
-NAME=$(basename "$URL" .git)
+  echo "Processing ${full_name}"
 
-git clone --quiet "$URL" "$TMP/$NAME" || return
+  git -c http.extraheader="AUTHORIZATION: bearer ${GH_TOKEN}" \
+    clone --quiet "https://github.com/${full_name}.git" "$repo_dir" || return
 
-cd "$TMP/$NAME"
+  cd "$repo_dir"
 
-while read added removed file; do
+  PROJECT_REPOS[$owner]=$(( ${PROJECT_REPOS[$owner]:-0} + 1 ))
 
-[[ "$added" == "-" ]] && continue
+  local repo_commits
+  repo_commits=$(git rev-list --count HEAD)
+  PROJECT_COMMITS[$owner]=$(( ${PROJECT_COMMITS[$owner]:-0} + repo_commits ))
 
-REPO_ADDED[$NAME]=$(( ${REPO_ADDED[$NAME]:-0} + added ))
-REPO_REMOVED[$NAME]=$(( ${REPO_REMOVED[$NAME]:-0} + removed ))
+  while read -r added removed file; do
+    [[ -z "${added:-}" ]] && continue
+    [[ "$added" == "-" ]] && continue
 
-TOTAL_ADDED=$((TOTAL_ADDED + added))
-TOTAL_REMOVED=$((TOTAL_REMOVED + removed))
+    REPO_ADDED[$name]=$(( ${REPO_ADDED[$name]:-0} + added ))
+    REPO_REMOVED[$name]=$(( ${REPO_REMOVED[$name]:-0} + removed ))
 
-if [[ "$URL" == *"clous-ai"* ]]; then
-CLOUS_LOC_ADDED=$((CLOUS_LOC_ADDED + added))
-CLOUS_LOC_REMOVED=$((CLOUS_LOC_REMOVED + removed))
-fi
+    TOTAL_ADDED=$((TOTAL_ADDED + added))
+    TOTAL_REMOVED=$((TOTAL_REMOVED + removed))
 
-done < <(git log --pretty=tformat: --numstat)
+    PROJECT_LOC_ADDED[$owner]=$(( ${PROJECT_LOC_ADDED[$owner]:-0} + added ))
+    PROJECT_LOC_REMOVED[$owner]=$(( ${PROJECT_LOC_REMOVED[$owner]:-0} + removed ))
+  done < <(git log --pretty=tformat: --numstat)
 
-while read year added removed; do
+  while read -r year added removed; do
+    YEAR_ADDED[$year]=$(( ${YEAR_ADDED[$year]:-0} + added ))
+    YEAR_REMOVED[$year]=$(( ${YEAR_REMOVED[$year]:-0} + removed ))
+  done < <(
+    git log --pretty="%ad" --date=format:%Y --numstat |
+    awk '
+      NF==1 {year=$1}
+      NF==3 && $1 != "-" {
+        added[year]+=$1
+        removed[year]+=$2
+      }
+      END {
+        for (y in added) {
+          print y, added[y], removed[y]
+        }
+      }'
+  )
 
-YEAR_ADDED[$year]=$(( ${YEAR_ADDED[$year]:-0} + added ))
-YEAR_REMOVED[$year]=$(( ${YEAR_REMOVED[$year]:-0} + removed ))
-
-done < <(
-
-git log --pretty="%ad" --date=format:%Y --numstat |
-awk '
-
-NF==1 {year=$1}
-
-NF==3 {added[year]+=$1; removed[year]+=$2}
-
-END {
-
-for (y in added)
-print y, added[y], removed[y]
-
-}'
-
-)
-
-cd -
+  cd - >/dev/null
 }
 
 repos=$((
-fetch_repos alvarovillalbaa
-fetch_repos clous-ai
-fetch_repos sentyl-ai
+  fetch_user_repos
+  fetch_org_repos "clous-ai"
+  fetch_org_repos "sentyl-ai"
 ) | sort -u)
 
-TOTAL_REPOS=$(echo "$repos" | wc -l)
+TOTAL_REPOS=$(echo "$repos" | sed '/^$/d' | wc -l | tr -d ' ')
 
 for repo in $repos; do
-echo "Processing $repo"
-clone_and_analyze "$repo"
+  clone_and_analyze "$repo"
 done
 
 NET=$((TOTAL_ADDED - TOTAL_REMOVED))
-CLOUS_NET=$((CLOUS_LOC_ADDED - CLOUS_LOC_REMOVED))
-
-CLOUS_REPOS=$(curl -s https://api.github.com/orgs/clous-ai/repos \
-| jq '[.[] | select(.fork==false)] | length')
-
-CLOUS_COMMITS=$(get_commits_for_org clous-ai)
 
 mkdir -p metrics
 
 CONTAINERS=$(yq '.production.containers' metrics/system.yml)
-PROVIDERS=$(yq '.production.cloud_providers | join(" + ")' metrics/system.yml)
-SERVICES=$(yq '.services | join(" / ")' metrics/system.yml)
+PROVIDERS=$(yq -r '.production.cloud_providers | join(" + ")' metrics/system.yml)
+SERVICES=$(yq -r '.services | join(" / ")' metrics/system.yml)
 
 {
+  echo "## Engineering Metrics"
+  echo ""
 
-echo "## Engineering Metrics"
-echo ""
+  echo "### Yearly LOC"
+  echo ""
+  echo "| Year | +LOC | -LOC | Net |"
+  echo "|---|---:|---:|---:|"
 
-echo "### Yearly LOC"
-echo ""
-echo "| Year | +LOC | -LOC | Net |"
-echo "|----|----|----|----|"
+  for y in "${!YEAR_ADDED[@]}"; do
+    add=${YEAR_ADDED[$y]}
+    rem=${YEAR_REMOVED[$y]}
+    net=$((add - rem))
+    printf "| %s | %'\''d | %'\''d | %+d |\n" "$y" "$add" "$rem" "$net"
+  done | sort -r
 
-for y in "${!YEAR_ADDED[@]}"; do
-add=${YEAR_ADDED[$y]}
-rem=${YEAR_REMOVED[$y]}
-net=$((add-rem))
-printf "| %s | %'d | %'d | %+d |\n" "$y" "$add" "$rem" "$net"
-done | sort -r
+  echo ""
+  echo "### Repo Breakdown"
+  echo ""
+  echo "| Repo | +LOC | -LOC |"
+  echo "|---|---:|---:|"
 
-echo ""
-echo "### Repo Breakdown"
-echo ""
-echo "| Repo | +LOC | -LOC |"
-echo "|----|----|----|"
+  for r in "${!REPO_ADDED[@]}"; do
+    printf "%012d| %s | %'\''d | %'\''d |\n" "${REPO_ADDED[$r]}" "$r" "${REPO_ADDED[$r]}" "${REPO_REMOVED[$r]}"
+  done | sort -r | cut -d'|' -f2-
 
-for r in "${!REPO_ADDED[@]}"; do
-printf "| %s | %'d | %'d |\n" "$r" "${REPO_ADDED[$r]}" "${REPO_REMOVED[$r]}"
-done | sort -t'|' -k2 -nr
+  echo ""
+  echo "### Production Systems"
+  echo ""
+  echo "| Metric | Value |"
+  echo "|---|---|"
+  echo "| Repos maintained | $TOTAL_REPOS |"
+  echo "| Containers running | $CONTAINERS |"
+  echo "| Cloud providers | $PROVIDERS |"
+  echo "| Services | $SERVICES |"
 
-echo ""
+  echo ""
+  echo "### Project Impact"
+  echo ""
 
-echo "### Production Systems"
-echo ""
-echo "| Metric | Value |"
-echo "|------|------|"
-echo "| Repos maintained | $TOTAL_REPOS |"
-echo "| Containers running | $CONTAINERS |"
-echo "| Cloud providers | $PROVIDERS |"
-echo "| Services | $SERVICES |"
+  for owner in clous-ai sentyl-ai alvarovillalbaa; do
+    repos_count=${PROJECT_REPOS[$owner]:-0}
+    commits_count=${PROJECT_COMMITS[$owner]:-0}
+    loc_added=${PROJECT_LOC_ADDED[$owner]:-0}
+    loc_removed=${PROJECT_LOC_REMOVED[$owner]:-0}
+    loc_net=$((loc_added - loc_removed))
 
-echo ""
+    case "$owner" in
+      clous-ai)
+        project_name="Clous AI"
+        tech=$(yq -r '.projects."clous-ai".tech | join(" / ")' metrics/system.yml)
+        ;;
+      sentyl-ai)
+        project_name="Sentyl AI"
+        tech=$(yq -r '.projects."sentyl-ai".tech | join(" / ")' metrics/system.yml)
+        ;;
+      alvarovillalbaa)
+        project_name="Personal Repos"
+        tech="Various"
+        ;;
+    esac
 
-echo "### Project Impact"
-echo ""
-echo "#### Clous AI"
-echo ""
-echo "| Metric | Value |"
-echo "|------|------|"
-echo "| Repositories | $CLOUS_REPOS |"
-echo "| Commits | $CLOUS_COMMITS+ |"
-echo "| LOC | $CLOUS_NET+ |"
-echo "| Tech | Django / Next.js / Agents / MCP |"
-
-echo ""
-
+    echo "#### $project_name"
+    echo ""
+    echo "| Metric | Value |"
+    echo "|---|---|"
+    echo "| Repositories | $repos_count |"
+    echo "| Commits | $commits_count |"
+    echo "| LOC | $loc_net |"
+    echo "| Tech | $tech |"
+    echo ""
+  done
 } > metrics/loc.md
