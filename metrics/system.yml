@@ -1,0 +1,27 @@
+production:
+  containers: 8
+  cloud_providers:
+    - AWS
+    - Azure
+
+services:
+  - Django
+  - Next.js
+  - Agents
+
+projects:
+  clous-ai:
+    name: Clous AI
+    org: clous-ai
+    tech:
+      - Django
+      - Next.js
+      - Agents
+      - MCP
+
+  sentyl-ai:
+    name: Sentyl AI
+    org: sentyl-ai
+    tech:
+      - AI Agents
+      - Automation
