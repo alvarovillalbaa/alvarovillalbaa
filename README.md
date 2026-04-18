@@ -1,6 +1,6 @@
 AI systems engineer and founder building **Clous** — an AI-native platform for HR teams.
 
-Working as a AI QA Architect at Iberia.
+Working as a AI QA Architect at Iberia Airlines.
 
 I work on agent systems, product engineering, and workflow automation across backend, frontend, and AI infrastructure.
 
@@ -18,7 +18,7 @@ I work on agent systems, product engineering, and workflow automation across bac
 - **[intelligent-courses](https://github.com/alvarovillalbaa/intelligent-courses)** - application to go from raw data to learning courses
 - **[filesystem](https://github.com/alvarovillalbaa/filesystem)** - a plug-and-play filesystem for multi-agent systems
 - **[wikis](https://github.com/alvarovillalbaa/wikis)** - my personal and professional knowledge base
-- **[smartwatch-agents-control](https://github.com/alvarovillalbaa/smartwatch-agents-control)** - WatchOS app for the entire agentic stack
+- **[watchOS-agents](https://github.com/alvarovillalbaa/watchOS-agents)** - WatchOS app for the entire agentic stack
 - **[earlycode](https://github.com/alvarovillalbaa/earlycode)** — archive of my early programming projects and experiments
 
 <!--LOC_METRICS_START-->
