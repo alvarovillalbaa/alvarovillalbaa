@@ -13,12 +13,13 @@ I work on agent systems, product engineering, and workflow automation across bac
 
 ## Selected repositories
 - **[plugins](https://github.com/alvarovillalbaa/plugins)** — plugins with skills, commands and agents, to automate myself
-- **[home-os](https://github.com/alvarovillalbaa/home-os)** - intelligent investment OS
-- **[intelligent-slides](https://github.com/alvarovillalbaa/intelligent-slides)** - application to go from raw data to code-based slides
-- **[intelligent-courses](https://github.com/alvarovillalbaa/intelligent-courses)** - application to go from raw data to learning courses
-- **[filesystem](https://github.com/alvarovillalbaa/filesystem)** - a plug-and-play filesystem for multi-agent systems
+- **[home-os](https://github.com/alvarovillalbaa/home-os)** - intelligent home management OS
+- **[body-os](https://github.com/alvarovillalbaa/body-os)** - intelligent body and health OS
+- **[intelligent-visualization](https://github.com/alvarovillalbaa/intelligent-visualization)** - application to go from raw data to code-based slides, courses, reports and much more
+- **[agentic-filesystem-standard](https://github.com/alvarovillalbaa/afs)** - a global standard for Agentic File Systems
+- **[virtual-filesystem](https://github.com/alvarovillalbaa/vafs)** - a plug-and-play filesystem for multi-agent systems
 - **[wikis](https://github.com/alvarovillalbaa/wikis)** - my personal and professional knowledge base
-- **[watchOS-agents](https://github.com/alvarovillalbaa/watchOS-agents)** - WatchOS app for the entire agentic stack
+- **[watchOS-agents-control-hub](https://github.com/alvarovillalbaa/watch-os-agents)** - WatchOS app for the entire agentic stack
 - **[earlycode](https://github.com/alvarovillalbaa/earlycode)** — archive of my early programming projects and experiments
 
 <!--LOC_METRICS_START-->
