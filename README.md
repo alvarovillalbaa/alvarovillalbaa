@@ -14,11 +14,12 @@ I work on agent systems, product engineering, and workflow automation across bac
 ## Selected repositories
 - **[plugins](https://github.com/alvarovillalbaa/plugins)** — plugins with skills, commands and agents, to automate myself
 - **[intelligent-visualization](https://github.com/alvarovillalbaa/intelligent-visualization)** - application to go from raw data to code-based slides, courses, reports and much more
+- **[watch-os-agents](https://github.com/alvarovillalbaa/watch-os-agents-ch)** - watchOS app to receive notifications from OpenClaw and HermesAgent and trigger recommended follow-ups
+- **[inspiration-canvas](https://github.com/alvarovillalbaa/inspiration-canvas)** - infinite canvas for creatives, to save inspiration and turn your moodboard into your own
+- **[open-evals](https://github.com/alvarovillalbaa/open-evals)** - end-to-end evals system for AI Agents with auto-improvement methods of Karpathy's autoresearch, genetic algorightms, GEPA, FOPA, and others
 - **[agentic-filesystem-standard](https://github.com/alvarovillalbaa/afs)** - a global standard for Agentic File Systems
-- **[virtual-filesystem](https://github.com/alvarovillalbaa/vafs)** - a plug-and-play filesystem for multi-agent systems
-- **[wikis](https://github.com/alvarovillalbaa/wikis)** - my personal and professional knowledge base
-- **[watchOS-agents-control-hub](https://github.com/alvarovillalbaa/watch-os-agents-ch)** - WatchOS app for the entire agentic stack
-- **[earlycode](https://github.com/alvarovillalbaa/earlycode)** — archive of my early programming projects and experiments
+- **[wikis](https://github.com/alvarovillalbaa/wikis)** - my personal and professional knowledge base (only the public side of it)
+- **[earlycode](https://github.com/alvarovillalbaa/earlycode)** — archive of my early programming projects, tinklinkg and experiments
 
 <!--LOC_METRICS_START-->
 ## Engineering Metrics
