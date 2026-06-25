@@ -14,7 +14,7 @@ I work on agent systems, product engineering, and workflow automation across bac
 ## Selected repositories
 - **[plugins](https://github.com/alvarovillalbaa/plugins)** — plugins with skills, commands and agents, to automate myself
 - **[intelligent-visualization](https://github.com/alvarovillalbaa/intelligent-visualization)** - application to go from raw data to code-based slides, courses, reports and much more
-- **[watch-os-agents](https://github.com/alvarovillalbaa/watch-os-agents-ch)** - watchOS app to receive notifications from OpenClaw and HermesAgent and trigger recommended follow-ups
+- **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** - WatchOS + WearOS app to receive notifications from OpenClaw and HermesAgent and trigger recommended follow-ups
 - **[inspiration-canvas](https://github.com/alvarovillalbaa/inspiration-canvas)** - infinite canvas for creatives, to save inspiration and turn your moodboard into your own
 - **[open-evals](https://github.com/alvarovillalbaa/open-evals)** - end-to-end evals system for AI Agents with auto-improvement methods of Karpathy's autoresearch, genetic algorightms, GEPA, FOPA, and others
 - **[agentic-filesystem-standard](https://github.com/alvarovillalbaa/afs)** - a global standard for Agentic File Systems
