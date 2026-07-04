@@ -24,6 +24,7 @@ I work on agent systems, product engineering, and workflow automation across bac
 - **[inspiration-canvas](https://github.com/alvarovillalbaa/inspiration-canvas)** - infinite canvas for creatives, to save inspiration and turn your moodboard into your own
 - **[llm-lab](https://github.com/alvarovillalbaa/lab)** - end-to-end system for AI models auto-improvement, pre-training, research and post-training, as well as other advanced methods. Trying to do new discoveries.
 - **[agentic-filesystem-standard](https://github.com/alvarovillalbaa/afs)** - a global standard for Agentic File Systems
+- **[product-launch-simulation](https://github.com/alvarovillalbaa/before-the-launch)** - a system of AI Agents that simulate the performance of new product launches based on the entire internet's context and your historical product launches performance
 - **[wikis](https://github.com/alvarovillalbaa/wikis)** - my personal and professional knowledge base (only the public side of it)
 - **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** - WatchOS + WearOS app to receive notifications from OpenClaw and HermesAgent and trigger recommended follow-ups
 - **[open-evals](https://github.com/alvarovillalbaa/open-evals)** - end-to-end evals system for AI Agents with auto-improvement methods of Karpathy's autoresearch, genetic algorightms, GEPA, FOPA, and others
