@@ -4,9 +4,15 @@ Working as a AI QA Architect at Iberia Airlines.
 
 I work on agent systems, product engineering, and workflow automation across backend, frontend, and AI infrastructure.
 
+## Recent decisions
+- Deprecate OpenClaw, Hermes Agent, Paperclip, Notion AI Agents, and Cursor Automations; all migrated to Codex
+- Post-pone **[virtual-agentic-filesystem](https://github.com/alvarovillalbaa/vafs)** and use GBrain and QMD instead
+- Post-pone **[open-evals](https://github.com/alvarovillalbaa/open-evals)** because we already developed it at scale at **Clous**.
+
 ## What I'm building
 - **Clous**: AI software for HR and Talent Ops
 - **Sentyl**: AI-native agency for 360º AI transformation of Enterprises
+- **Niubi**: Personal Research Lab to pre-train, research and post-train AI models.
 - **Agent systems**: skills, commands, orchestration, harnesses and reusable workflows
 - **Production software**: Django/Python, Next.js, TypeScript, PostgreSQL/Convex/Supabase, AWS/Azure/GCP
 - **Automation**: OpenClaw, Hermes Agent, Paperclip, Cursor/Codex Automations, Notion AI Agents
