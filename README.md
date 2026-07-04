@@ -8,6 +8,7 @@ I work on agent systems, product engineering, and workflow automation across bac
 - Deprecate OpenClaw, Hermes Agent, Paperclip, Notion AI Agents, and Cursor Automations; all migrated to Codex
 - Post-pone **[virtual-agentic-filesystem](https://github.com/alvarovillalbaa/vafs)** and use GBrain and QMD instead
 - Post-pone **[open-evals](https://github.com/alvarovillalbaa/open-evals)** because we already developed it at scale at **Clous**.
+- Post-pone **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** because we have stopped using OpenClaw and HermesAgent.
 
 ## What I'm building
 - **Clous**: AI software for HR and Talent Ops
@@ -20,11 +21,12 @@ I work on agent systems, product engineering, and workflow automation across bac
 ## Selected repositories
 - **[plugins](https://github.com/alvarovillalbaa/plugins)** — plugins with skills, commands and agents, to automate myself
 - **[intelligent-visualization](https://github.com/alvarovillalbaa/intelligent-visualization)** - application to go from raw data to code-based slides, courses, reports and much more
-- **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** - WatchOS + WearOS app to receive notifications from OpenClaw and HermesAgent and trigger recommended follow-ups
 - **[inspiration-canvas](https://github.com/alvarovillalbaa/inspiration-canvas)** - infinite canvas for creatives, to save inspiration and turn your moodboard into your own
-- **[open-evals](https://github.com/alvarovillalbaa/open-evals)** - end-to-end evals system for AI Agents with auto-improvement methods of Karpathy's autoresearch, genetic algorightms, GEPA, FOPA, and others
+- **[llm-lab](https://github.com/alvarovillalbaa/lab)** - end-to-end system for AI models auto-improvement, pre-training, research and post-training, as well as other advanced methods. Trying to do new discoveries.
 - **[agentic-filesystem-standard](https://github.com/alvarovillalbaa/afs)** - a global standard for Agentic File Systems
 - **[wikis](https://github.com/alvarovillalbaa/wikis)** - my personal and professional knowledge base (only the public side of it)
+- **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** - WatchOS + WearOS app to receive notifications from OpenClaw and HermesAgent and trigger recommended follow-ups
+- **[open-evals](https://github.com/alvarovillalbaa/open-evals)** - end-to-end evals system for AI Agents with auto-improvement methods of Karpathy's autoresearch, genetic algorightms, GEPA, FOPA, and others
 - **[earlycode](https://github.com/alvarovillalbaa/earlycode)** — archive of my early programming projects, tinklinkg and experiments
 
 <!--LOC_METRICS_START-->
