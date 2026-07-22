@@ -4,16 +4,9 @@ Working as a AI QA Architect at Iberia Airlines.
 
 I work on agent systems, product engineering, and workflow automation across backend, frontend, and AI infrastructure.
 
-## Recent decisions
-- Deprecate OpenClaw, Hermes Agent, Paperclip, Notion AI Agents, and Cursor Automations; all migrated to Codex
-- Post-pone **[virtual-agentic-filesystem](https://github.com/alvarovillalbaa/vafs)** and use GBrain and QMD instead
-- Post-pone **[open-evals](https://github.com/alvarovillalbaa/open-evals)** because we already developed it at scale at **Clous**.
-- Post-pone **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** because we have stopped using OpenClaw and HermesAgent.
-
 ## What I'm building
 - **Clous**: AI software for HR and Talent Ops
 - **Sentyl**: AI-native agency for 360º AI transformation of Enterprises
-- **Niubi**: Personal Research Lab to pre-train, research and post-train AI models.
 - **Agent systems**: skills, commands, orchestration, harnesses and reusable workflows
 - **Production software**: Django/Python, Next.js, TypeScript, PostgreSQL/Convex/Supabase, AWS/Azure/GCP
 - **Automation**: OpenClaw, Hermes Agent, Paperclip, Cursor/Codex Automations, Notion AI Agents
@@ -27,8 +20,14 @@ I work on agent systems, product engineering, and workflow automation across bac
 - **[product-launch-simulation](https://github.com/alvarovillalbaa/before-the-launch)** - a system of AI Agents that simulate the performance of new product launches based on the entire internet's context and your historical product launches performance
 - **[wikis](https://github.com/alvarovillalbaa/wikis)** - my personal and professional knowledge base (only the public side of it)
 - **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** - WatchOS + WearOS app to receive notifications from OpenClaw and HermesAgent and trigger recommended follow-ups
-- **[open-evals](https://github.com/alvarovillalbaa/open-evals)** - end-to-end evals system for AI Agents with auto-improvement methods of Karpathy's autoresearch, genetic algorightms, GEPA, FOPA, and others
 - **[earlycode](https://github.com/alvarovillalbaa/earlycode)** — archive of my early programming projects, tinklinkg and experiments
+
+- ## Recent decisions
+- Deprecate OpenClaw, Hermes Agent, Paperclip, Notion AI Agents, and Cursor Automations; all migrated to Codex
+- Post-pone **[virtual-agentic-filesystem](https://github.com/alvarovillalbaa/vafs)** and use GBrain and QMD instead
+- Post-pone **[open-evals](https://github.com/alvarovillalbaa/open-evals)** because we already developed it at scale at **Clous**.
+- Post-pone **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** because we have stopped using OpenClaw and HermesAgent.
+- Post-pone **[open-evals](https://github.com/alvarovillalbaa/open-evals)** because there are many already-existing solutions
 
 <!--LOC_METRICS_START-->
 ## Engineering Metrics
