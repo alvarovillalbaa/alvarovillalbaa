@@ -19,11 +19,11 @@ I work on agent systems, product engineering, and workflow automation across bac
 - **[agentic-filesystem-standard](https://github.com/alvarovillalbaa/afs)** - a global standard called Agentic Filesystem Standard
 - **[product-launch-simulation](https://github.com/alvarovillalbaa/before-the-launch)** - a system of AI Agents that simulate the performance of new product launches based on the entire internet's context and your historical product launches performance
 - **[virtual-agentic-filesystem](https://github.com/alvarovillalbaa/vafs)** - a virtual agentic filesystem based on the Agentic Filesystem Standard
-
+- **[open-evals](https://github.com/alvarovillalbaa/open-evals)** - an out-of-the-box evals suite with self-improving results
+  
 ## Recent decisions
 - Deprecate OpenClaw, Hermes Agent, Paperclip, Notion AI Agents, and Cursor Automations; all migrated to Codex
 - Don't develop **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** because we have stopped using OpenClaw and HermesAgent.
-- Don't develop **[open-evals](https://github.com/alvarovillalbaa/open-evals)** because there are many already-existing solutions, and we already do it at **[llm-lab](https://github.com/alvarovillalbaa/lab)** ; the decision is to not productize it.
 
 <!--LOC_METRICS_START-->
 ## Engineering Metrics
