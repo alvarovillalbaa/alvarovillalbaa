@@ -1,99 +1,61 @@
-AI systems engineer and founder building **Clous** — an AI-native platform for HR teams.
+# Hi, I'm Álvaro 👋
 
-Working as a AI QA Architect at Iberia Airlines.
+<!-- Last updated: 2026-10-22 -->
 
-I work on agent systems, product engineering, and workflow automation across backend, frontend, and AI infrastructure.
+**I build AI products and the tools to understand, test, and control them.**
 
-## What I'm building
-- **Clous**: AI software for HR and Talent Ops
-- **Sentyl**: AI-native agency for 360º AI transformation of Enterprises
-- **Agent systems**: skills, commands, orchestration, harnesses and reusable workflows
-- **Production software**: Django/Python, Next.js, TypeScript, PostgreSQL/Convex/Supabase, AWS/Azure/GCP
-- **Automation**: OpenClaw, Hermes Agent, Paperclip, Cursor/Codex Automations, Notion AI Agents
+I'm the founder of **[Clous](https://www.clousai.com/)**, an AI platform for
+people teams, and an **AI QA architect at Iberia Airlines**.
 
-## Selected repositories
-- **[plugins](https://github.com/alvarovillalbaa/plugins)** — plugins with skills, commands and agents, to automate myself
-- **[intelligent-visualization](https://github.com/alvarovillalbaa/intelligent-visualization)** - application to go from raw data to code-based slides, courses, reports and much more
-- **[inspiration-canvas](https://github.com/alvarovillalbaa/inspiration-canvas)** - infinite canvas for creatives, to save inspiration and turn your moodboard into your own
-- **[llm-lab](https://github.com/alvarovillalbaa/lab)** - end-to-end system for AI models auto-improvement, pre-training, research and post-training, evals, as well as other advanced methods. Trying to do new discoveries.
-- **[agentic-filesystem-standard](https://github.com/alvarovillalbaa/afs)** - a global standard called Agentic Filesystem Standard
-- **[product-launch-simulation](https://github.com/alvarovillalbaa/before-the-launch)** - a system of AI Agents that simulate the performance of new product launches based on the entire internet's context and your historical product launches performance
-- **[virtual-agentic-filesystem](https://github.com/alvarovillalbaa/vafs)** - a virtual agentic filesystem based on the Agentic Filesystem Standard
-- **[open-evals](https://github.com/alvarovillalbaa/open-evals)** - an out-of-the-box evals suite with self-improving results
-  
-## Recent decisions
-- Deprecate OpenClaw, Hermes Agent, Paperclip, Notion AI Agents, and Cursor Automations; all migrated to Codex
-- Don't develop **[smart-watch-agents](https://github.com/alvarovillalbaa/smart-watch-agents)** because we have stopped using OpenClaw and HermesAgent.
+[Tools](#start-here) · [Apps](#apps) · [All projects](projects.md) · [Website](https://alvarovillalba.com/) · [LinkedIn](https://www.linkedin.com/in/alvarovillalbaperez/)
 
-<!--LOC_METRICS_START-->
-## Engineering Metrics
+## Start here
 
-### Yearly LOC
+| What you want to do | Start with |
+| --- | --- |
+| **Build agent interfaces** | **[agentcn-ui](https://github.com/alvarovillalbaa/agentcn-ui)** — React components for runs, tool calls, approvals, memory, and evaluation. [Explore the demos](https://agentcn-ui.vercel.app/). |
+| **Evaluate AI changes before release** | **[open-evals](https://github.com/alvarovillalbaa/open-evals)** — Reproducible evaluations, system-prompt optimization, and release gates. [Run it locally](https://github.com/alvarovillalbaa/open-evals/blob/main/README.md#quick-start). |
+| **Make agent context portable** | **[AFS](https://github.com/alvarovillalbaa/afs)** — A filesystem specification for context, durable knowledge, and source provenance. [Read the specification](https://github.com/alvarovillalbaa/afs/blob/main/README.md#standard). |
+| **Give agents reusable workflows** | **[Agent Company / plugins](https://github.com/alvarovillalbaa/plugins)** — Skills, commands, rules, and agents across engineering, product, and business operations. [Install workflows](https://github.com/alvarovillalbaa/plugins/blob/main/references/docs/INSTALLATION.md). |
 
-| Year | +LOC | -LOC | Net |
-|----|----|----|----|
-| 2026 | 141663 | 5014 | +136649 |
-| 2025 | 4420576 | 2573 | +4418003 |
-| 2024 | 119159 | 31 | +119128 |
-| 2023 | 3 | 3 | +0 |
-| 2022 | 66 | 29 | +37 |
+<!-- Screenshot source: https://github.com/alvarovillalbaa/agentcn-ui/blob/main/docs/results/2026/10-15/homepage.jpg -->
+[![agentcn-ui demo interface showing agent progress, pause and cancel controls, and a human approval request](assets/agentcn-ui-demo.jpg)](https://agentcn-ui.vercel.app/)
 
-### Repo Breakdown
+*An agentcn-ui demo run with pause/cancel controls and a human approval request.*
 
-| Repo | +LOC | -LOC |
-|----|----|----|
-| weird-binaries | 1677 | 1 |
-| professor-platform | 65100 | 1 |
-| open-clous | 2406170 | 163 |
-| mcp-app | 4700 | 0 |
-| kova | 46378 | 725 |
-| investment-intelligence | 60573 | 0 |
-| gallery | 15351 | 0 |
-| food-map | 2980668 | 229 |
-| earlycode | 123534 | 0 |
-| deployment-test-app | 15796 | 56 |
-| cursor-happy-robbot-demo | 36267 | 1396 |
-| ct-resume-hash | 1773 | 1 |
-| alvarovillalbaa | 443 | 140 |
-| agents-marketplace | 35 | 1 |
-| agents | 32931 | 2935 |
-| agent-system | 492 | 0 |
-| agent-suite | 47428 | 2032 |
+## Apps
 
-### Production Systems
+| Project | What you can do |
+| --- | --- |
+| **[Sift](https://github.com/alvarovillalbaa/sift-analytics)** · [Open app](https://sift-analytics.vercel.app/) | Explore local files with DuckDB, inspect SQL, and arrange dashboard views. |
+| **[trippin](https://github.com/alvarovillalbaa/trippin)** · [Open app](https://trippin-theta.vercel.app/) | Plan trips with itineraries, maps, reservations, budgets, and expenses. |
+| **[Still](https://github.com/alvarovillalbaa/still-markdown)** · [Open app](https://still-markdown.vercel.app/) | Edit Markdown in rich-text or source mode, with pages saved on your device. |
+| **[Parola](https://github.com/alvarovillalbaa/parola)** · [Open app](https://parola-eta.vercel.app/) | Practice vocabulary and grammar offline with active recall and spaced review. |
 
-| Metric | Value |
-|------|------|
-| Repos maintained | 19 |
-| Containers running | 8 |
-| Cloud providers | AWS + Azure |
-| Services | Django / Next.js / Agents |
+Sift and trippin require configuration for AI and external data/provider connections.
 
-### Project Impact
+## More to explore
 
-#### Clous AI
+- **[Sonant](https://github.com/alvarovillalbaa/sonant)** — Sound feedback for React and the web, with editable recipes and playback controls. [Playground](https://sonant-beta.vercel.app/).
+- **[Search Gateway](https://github.com/alvarovillalbaa/search-gateway)** — One API for multi-provider AI search and source retrieval, with TypeScript/Python SDKs and MCP tools.
+- **[OCR Gateway](https://github.com/alvarovillalbaa/ocr-gateway)** — Self-hosted document parsing across OCR, vision, and local providers, with citations and embedding-ready chunks.
 
-| Metric | Value |
-|------|------|
-| Repositories | 3 |
-| Commits | 3+ |
-| LOC | 2436037+ |
-| Tech | Django / Next.js / Agents / MCP |
-<!--LOC_METRICS_END-->
+**[Browse the full project index](projects.md)** for creative tools, research,
+earlier work, team projects, and attributed upstream forks.
 
-## Current focus
-- Multi-agent architectures
-- MCP and tool integrations
-- AI-native product workflows
-- Building production-ready systems fast
+## A little background
 
-## Background
-Started in aerospace engineering, became a self-taught programmer, and now build software and AI systems full-time.
+I started in aerospace engineering, taught myself to program, and moved into
+software and AI systems full-time. I also work on **Sentyl**, an AI
+transformation agency.
 
-## Links
-- [Clous](https://www.clousai.com)
-- [Sentyl](https://www.sentylai.com)
-- [LinkedIn](https://www.linkedin.com/in/alvarovillalbaperez/)
-- [Personal Website](https://www.alvarovillalba.com/)
+Beyond AI, I've built websites for two Madrid communities:
+**[Happy Run](https://github.com/alvarovillalbaa/happy-run)**, a social running club
+([site](https://happy-run-six.vercel.app/)), and
+**[teki](https://github.com/alvarovillalbaa/teki)**, a technology community
+([site](https://teki-chi.vercel.app/)).
 
-![profile](https://user-images.githubusercontent.com/87529457/156182981-0a437d86-5c92-4e1d-8335-7a3b8b0162f7.gif)
+My core stack is **Python, TypeScript, React/Next.js, Django, and PostgreSQL**.
+
+If you're building agent infrastructure, evaluation tools, or AI products,
+[let's talk](https://www.linkedin.com/in/alvarovillalbaperez/).
