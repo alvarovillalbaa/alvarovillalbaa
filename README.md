@@ -1,4 +1,4 @@
-# Hi, I'm Álvaro 👋
+# This is Álvaro
 
 <!-- Last updated: 2026-10-22 -->
 
