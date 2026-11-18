@@ -1,16 +1,9 @@
 # Project index
 
-Last updated: 2026-10-22
+The current [project catalogue](README.md#projects) lives on the profile.
 
-The [profile README](README.md) highlights where to start. This index covers every
-public project repository in my personal GitHub account at the review date:
-**28 projects**, plus **8 upstream forks** attributed below. The profile repository
-itself is excluded. Private repositories and organization-owned code are outside
-this public index; Clous and Sentyl are introduced in the profile.
-
-Descriptions follow project documentation and source, with prototypes and team
-contributions identified. An app or demo link is an entry point, not a claim that
-every integration has been verified.
+The October 22, 2026 snapshot below preserves the original scope notes, team
+attribution, and fork provenance from the previous project index.
 
 ## Agent infrastructure & developer tools
 
@@ -75,9 +68,3 @@ records the public fork; it makes no claim about my contributions to its code.
 | [nanochat](https://github.com/alvarovillalbaa/nanochat) | A compact LLM pipeline covering tokenization, training, evaluation, inference, and chat serving. | [karpathy/nanochat](https://github.com/karpathy/nanochat) |
 | [autoagent](https://github.com/alvarovillalbaa/autoagent) | Hermes Agent: a personal agent with memory, reusable skills, scheduling, and messaging integrations. | [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) |
 | [openagent](https://github.com/alvarovillalbaa/openagent) | OpenClaw: a self-hosted personal assistant accessible through messaging channels and native devices. | [openclaw/openclaw](https://github.com/openclaw/openclaw) |
-
-## Keeping this index current
-
-Add new public projects here with a concrete purpose, an accurate maturity note,
-and a useful entry point. Keep team contributions and upstream forks attributed.
-The profile can stay selective; this index owns catalogue coverage.
