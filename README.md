@@ -21,23 +21,23 @@ I came to software through aerospace engineering. Here you'll find agent infrast
 
 ## Projects
 
-[Agent infrastructure](#agent-infrastructure) · [Developer tools](#developer-tools-and-extensions) · [OS apps](#os-apps) · [Web apps](#web-and-creative-apps) · [Games](#games) · [AI research](#ai-research-and-evaluation) · [Engineering research](#engineering-research) · [Community](#community-and-earlier-work) · [Clous](#clous) · [Forks](#upstream-forks)
+[Agent infrastructure](#agent-infrastructure) · [UI libraries](#ui-libraries) · [Developer tools](#developer-tools-and-extensions) · [OS apps](#os-apps) · [Web apps](#web-and-creative-apps) · [Games](#games) · [AI research](#ai-research-and-evaluation) · [AI Lab](#ai-research-lab) · [Engineering research](#engineering-research) · [Knowledge](#knowledge-and-notes) · [Community](#community-and-earlier-work) · [Clous](#clous) · [Forks](#upstream-forks)
 
 The tables cover my public GitHub repositories and Clous's public repositories. Expand a section for source, demos, downloads, or research notes.
 
+Project READMEs use a **Project family** label and an **Area** to connect related repositories. These labels describe how the work is grouped; each project documents its own implementation and release status.
+
 ### Agent infrastructure
 
-Tools for building agent interfaces, giving agents context, and connecting them to external services.
+Tools for giving agents context, composing reusable workflows, and connecting them to external services.
 
 <details>
 <summary>Libraries, gateways, and workflow packages</summary>
 
 | Project | What it does |
 | --- | --- |
-| [agentcn/ui](https://github.com/alvarovillalbaa/agentcn-ui) | React components for agent runs, tool calls, approvals, memory, artifacts, and evaluation. [Docs and demos](https://agentcn-ui.vercel.app/) |
 | [AFS](https://github.com/alvarovillalbaa/afs) | A filesystem standard for portable agent instructions, knowledge, work history, and source provenance. [Specification](https://github.com/alvarovillalbaa/afs/blob/main/skills/use-afs/references/afs-standard.md) |
 | [Agent Company](https://github.com/alvarovillalbaa/plugins) | Reusable agent skills and workflows for engineering, product, and business operations, with a cross-runtime installer. |
-| [MCPCN](https://github.com/alvarovillalbaa/mcpcn-ui) | React components, workflow blocks, and runtime helpers for human-controlled MCP Apps. [Docs and installs](https://mcpcn-ui.vercel.app/docs#install) |
 | [Search Gateway](https://github.com/alvarovillalbaa/search-gateway) | Self-hosted multi-provider search and source retrieval for apps and agents. [SDK releases](https://github.com/alvarovillalbaa/search-gateway/releases) |
 | [OCR Gateway](https://github.com/alvarovillalbaa/ocr-gateway) | Self-hosted document parsing across OCR, vision, and local providers, with citations and embedding-ready chunks. [SDK releases](https://github.com/alvarovillalbaa/ocr-gateway/releases) |
 | [AI App Jumpstart](https://github.com/alvarovillalbaa/ai-app-jumpstart) | A Next.js and Eve starter that shares application records across a web UI, REST, CLI, and MCP. In development. |
@@ -46,6 +46,16 @@ Tools for building agent interfaces, giving agents context, and connecting them 
 | [Business Claw](https://github.com/alvarovillalbaa/business-claw) | A control-plane prototype for separate OpenClaw workspaces per customer organization. Archived. |
 
 </details>
+
+### UI libraries
+
+Reusable components and interaction layers for applications: agent interfaces, MCP Apps, and interface sounds.
+
+| Project | What it does |
+| --- | --- |
+| [agentcn/ui](https://github.com/alvarovillalbaa/agentcn-ui) | React components for agent runs, tool calls, approvals, memory, artifacts, and evaluation. [Docs and demos](https://agentcn-ui.vercel.app/) |
+| [MCPCN](https://github.com/alvarovillalbaa/mcpcn-ui) | React components, workflow blocks, and runtime helpers for human-controlled MCP Apps. [Docs and installs](https://mcpcn-ui.vercel.app/docs#install) |
+| [Sonant](https://github.com/alvarovillalbaa/sonant) | Composable interface sounds and playback controls for React and the web. [Playground](https://sonant-beta.vercel.app/) |
 
 ### Developer tools and extensions
 
@@ -59,7 +69,6 @@ Tools that fit into a code editor, browser, test suite, or publishing workflow.
 | [Traverse](https://github.com/alvarovillalbaa/traverse) | Run Playwright browser journeys from Vitest with exact assertions and optional agent steps. [Preview package](https://github.com/alvarovillalbaa/traverse/releases) |
 | [Contextlet](https://github.com/alvarovillalbaa/contextlet) | A VS Code extension that turns selected code and diagnostics into a Markdown handoff you can review. [Developer preview](https://github.com/alvarovillalbaa/contextlet/releases) |
 | [Tracelet](https://github.com/alvarovillalbaa/tracelet) | A Chrome extension for recording a tab, editing the resulting checklist, and replaying approved steps. [Get the extension](https://tracelet-three.vercel.app) |
-| [Sonant](https://github.com/alvarovillalbaa/sonant) | Composable interface sounds and playback controls for React and the web. [Playground](https://sonant-beta.vercel.app/) |
 | [Intakelet](https://github.com/alvarovillalbaa/intakelet) | An onboarding SDK that turns customer files and public websites into reviewed records and source-backed knowledge. [Playground](https://intakelet.vercel.app) |
 | [Clero](https://github.com/alvarovillalbaa/clero) | A Markdown documentation publisher with a local editing workspace, reader, and static-site CLI. |
 
@@ -136,7 +145,7 @@ Two original browser games, one about finding lift and one about finding a line 
 
 ### AI research and evaluation
 
-I work on measuring model and agent behavior, from claim-level checks to tasks scored by their effects. The LLM Lab explores how to make training and inference experiments reproducible.
+I work on measuring model and agent behavior, from claim-level checks to tasks scored by their effects. The AI Research Lab explores how to make training and inference experiments reproducible.
 
 <details>
 <summary>Evaluation tools, benchmarks, and experiments</summary>
@@ -146,13 +155,17 @@ I work on measuring model and agent behavior, from claim-level checks to tasks s
 | [Open Evals](https://github.com/alvarovillalbaa/open-evals) | Provider-independent evaluations, prompt improvement, and release gates. [Local quick start](https://github.com/alvarovillalbaa/open-evals/blob/main/README.md#quick-start) |
 | [HRBench Ops](https://github.com/alvarovillalbaa/hr-bench) | Synthetic HR workflow tasks scored by replaying agent actions and checking final sandbox state. [Task explorer](https://hr-bench.vercel.app) |
 | [Personal Evals](https://github.com/alvarovillalbaa/my-evals) | A local CLI for building portable Harbor tasks from your own work and comparing model or provider runs. |
-| [Factuality and uncertainty](https://github.com/alvarovillalbaa/factuality-uncertainty) | A deterministic study of claim verification, numeric checks, evidence provenance, and abstention. |
 | [Quantopsy](https://github.com/alvarovillalbaa/quantopsy) | GGUF quantization diagnostics and selective weight restoration. The first inference experiment missed its recovery criteria. |
+| [CPO](https://github.com/alvarovillalbaa/cpo) | Continuous prompt optimization under a fixed evaluation budget, with separate holdout qualification. |
 
 </details>
 
+#### AI Research Lab
+
+Independent repositories for model research, training, inference, and experiment infrastructure. [Lab](https://github.com/alvarovillalbaa/lab) brings the components together; each component can also be used independently.
+
 <details>
-<summary>LLM Lab, packages, and research specifications</summary>
+<summary>AI Research Lab repositories</summary>
 
 | Project | What it covers |
 | --- | --- |
@@ -179,18 +192,22 @@ I work on measuring model and agent behavior, from claim-level checks to tasks s
 
 ### Engineering research
 
-Experiments close to the machine, alongside engineering notes on software and aerospace.
+Research across energy, aerospace, AI systems, and computing foundations. The README area labels distinguish **Energy**, **Aerospace**, **AI**, **Foundations**, and **Systems** within this family. The public systems projects are listed below.
 
 <details>
-<summary>Systems experiments and technical notes</summary>
+<summary>Public systems experiments and AI research</summary>
 
 | Project | What it explores |
 | --- | --- |
 | [Low-level code exploration](https://github.com/alvarovillalbaa/low-level-code-exploration) | Executable formats, polyglot binaries, compact parsers, and boot code. |
 | [Kova](https://github.com/alvarovillalbaa/kova-blockchain) | An experimental Rust L1 blockchain scaffold covering protocol, domains, sequencer, and SDKs. |
-| [Wikis](https://github.com/alvarovillalbaa/wikis) | Personal notes on AI, engineering, aerospace, and business. [Knowledge index](https://github.com/alvarovillalbaa/wikis/blob/main/knowledge/INDEX.md) |
+| [Factuality and uncertainty](https://github.com/alvarovillalbaa/factuality-uncertainty) | A deterministic study of claim verification, numeric checks, evidence provenance, and abstention. |
 
 </details>
+
+### Knowledge and notes
+
+[Wikis](https://github.com/alvarovillalbaa/wikis) collects personal notes on AI, engineering, aerospace, and business. Start with its [knowledge index](https://github.com/alvarovillalbaa/wikis/blob/main/knowledge/INDEX.md).
 
 ### Community and earlier work
 
